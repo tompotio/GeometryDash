@@ -1,97 +1,106 @@
 <a name="readme-top"></a>
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<br />
+<!-- Titre et Logo -->
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo du Projet" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Modèle de README de Qualité</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Un modèle de README exceptionnel pour lancer vos projets !
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explorer la documentation »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/othneildrew/Best-README-Template">Voir la Démo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Rapporter un Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Demander une Fonctionnalité</a>
   </p>
 </div>
 
+<!-- Sommaire -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Table des Matières</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#a-propos-du-projet">À Propos du Projet</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#conçu-avec">Conçu Avec</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#pour-commencer">Pour Commencer</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#prérequis">Prérequis</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#utilisation">Utilisation</a></li>
+    <li><a href="#feuille-de-route">Feuille de Route</a></li>
+    <li><a href="#contribuer">Contribuer</a></li>
+    <li><a href="#licence">Licence</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#reconnaissances">Reconnaissances</a></li>
   </ol>
 </details>
 
-## About The Project
+## À Propos du Projet
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Capture d'écran du Projet][capture-ecran-projet]](https://example.com)
 
+<p align="right">(<a href="#readme-top">retour en haut</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### Conçu Avec
 
-### Built With
+* [C++](#) - Langage de Programmation
+* [CMake](#) - Outil de Gestion de Projet
 
-* [!C++-screenshot]
-* [!Cmake-screenshot]
+<p align="right">(<a href="#readme-top">retour en haut</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Pour Commencer
 
-## Getting Started
+![Image d'Installation](https://github.com/tompotio/GeometryDash/assets/113466055/6f5a52ac-d65c-4080-b31e-104fbefe53c6)
 
-![image](https://github.com/tompotio/GeometryDash/assets/113466055/6f5a52ac-d65c-4080-b31e-104fbefe53c6)
+Pour commencer, suivez ces étapes simples :
 
-Ensuite il reste juste à make et lancer le programme.
+### Prérequis
 
-### Prerequisites
+Assurez-vous d'avoir installé CMake et les dépendances SDL2 nécessaires. Vous pouvez trouver des instructions d'installation pour CMake [ici](https://cgold.readthedocs.io/en/latest/first-step/installation.html). Pour les dépendances SDL2, vous pouvez les installer en exécutant les commandes suivantes :
 
-Installation de Cmake : 
-https://cgold.readthedocs.io/en/latest/first-step/installation.html
+```bash
+# Installer SDL2
+sudo apt install libsdl2-dev libsdl2-2.0-0 -y;
 
-Installation de SDL2
-```
-  #install sdl2
-  sudo apt install libsdl2-dev libsdl2-2.0-0 -y;
-  
-  #install sdl image  - if you want to display images
-  sudo apt install libjpeg-dev libwebp-dev libtiff5-dev libsdl2-image-dev libsdl2-image-2.0-0 -y;
-  
-  #install sdl mixer  - if you want sound
-  sudo apt install libmikmod-dev libfishsound1-dev libsmpeg-dev liboggz2-dev libflac-dev libfluidsynth-dev libsdl2-mixer-dev libsdl2-mixer-2.0-0 -y;
-  
-  #install sdl true type fonts - if you want to use text
-  sudo apt install libfreetype6-dev libsdl2-ttf-dev libsdl2-ttf-2.0-0 -y;
+# Installer SDL Image (si vous avez besoin d'afficher des images)
+sudo apt install libjpeg-dev libwebp-dev libtiff5-dev libsdl2-image-dev libsdl2-image-2.0-0 -y;
+
+# Installer SDL Mixer (si vous avez besoin de son)
+sudo apt install libmikmod-dev libfishsound1-dev libsmpeg-dev liboggz2-dev libflac-dev libfluidsynth-dev libsdl2-mixer-dev libsdl2-mixer-2.0-0 -y;
+
+# Installer les polices TrueType SDL (si vous avez besoin de texte)
+sudo apt install libfreetype6-dev libsdl2-ttf-dev libsdl2-ttf-2.0-0 -y;
+
+# Cloner le référentiel
+git clone https://github.com/votre_nom/nom_du_projet.git
+
+# Accéder au répertoire du projet
+cd nom_du_projet
+
+# Générer les fichiers de construction avec CMake
+mkdir build
+cd build
+cmake ..
+
+# Compiler le programme
+make
+
+# Lancer le programme
+./votre_programme
+
 ```
 
 <!-- ROADMAP -->
@@ -104,35 +113,16 @@ Installation de SDL2
 - [ ] Multi-language Support
     - [ ] Chinese
     - [ ] Spanish
+<p align="right">(<a href="#readme-top">retour en haut</a>)</p>
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+Consultez les problèmes ouverts pour la liste complète des fonctionnalités proposées (et des problèmes connus).
+<p align="right">(<a href="#readme-top">retour en haut</a>)</p>
+<!-- Contact -->
+Contact
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Votre Nom - @votre_twitter - votre_email@example.com
 
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-[C++-screenshot]: ![image](https://github.com/tompotio/GeometryDash/assets/113466055/0b0937b1-c446-405a-a1cf-77606b18289c)
-[Cmake-screenshot]: ![image](https://github.com/tompotio/GeometryDash/assets/113466055/953c418b-1cd4-4c47-9f48-a129e462a528)
-
+Lien vers le Projet : https://github.com/votre_nom/nom_du_projet
+<p align="right">(<a href="#readme-top">retour en haut</a>)</p>
+<!-- Liens Markdown et Images -->
+<!-- Assurez-vous que les liens d'images sont valides -->
