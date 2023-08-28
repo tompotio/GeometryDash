@@ -41,8 +41,10 @@
 
 ### Conçu Avec
 
-* [C++](#) - Langage de Programmation
-* [CMake](#) - Outil de Gestion de Projet
+* [![C++](https://github.com/tompotio/GeometryDash/assets/113466055/db8d750b-46f9-46e8-8af5-ea9852b1481e)](https://devdocs.io/cpp/)
+  - Langage de Programmation
+* [![CMake](https://example.com/path/to/cmake/icon.png)](https://cmake.org/documentation/)
+  - Outil de Gestion de Projet
 
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
 
