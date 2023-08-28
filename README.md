@@ -63,8 +63,8 @@
 
 ### Built With
 
-* [![C++]]
-* [![Cmake]]
+* [![C++-screenshot]]
+* [![Cmake-screenshot]]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -133,6 +133,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
-[C++]: ![image](https://github.com/tompotio/GeometryDash/assets/113466055/0b0937b1-c446-405a-a1cf-77606b18289c)
-[Cmake]: ![image](https://github.com/tompotio/GeometryDash/assets/113466055/953c418b-1cd4-4c47-9f48-a129e462a528)
+[C++-screenshot]: ![image](https://github.com/tompotio/GeometryDash/assets/113466055/0b0937b1-c446-405a-a1cf-77606b18289c)
+[Cmake-screenshot]: ![image](https://github.com/tompotio/GeometryDash/assets/113466055/953c418b-1cd4-4c47-9f48-a129e462a528)
 
