@@ -9,8 +9,6 @@
 
 ## À Propos du Projet
 
-[![Capture d'écran du Projet][capture-ecran-projet]](https://example.com)
-
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
 
 ### Conçu Avec
