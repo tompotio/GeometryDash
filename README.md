@@ -64,13 +64,11 @@ make
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] ReadMe
+- [x] Premier Push
+- [ ] 
+    - [ ] 
+    - [ ] 
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
 
 Consultez les problèmes ouverts pour la liste complète des fonctionnalités proposées (et des problèmes connus).
