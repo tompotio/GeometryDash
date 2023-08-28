@@ -70,15 +70,3 @@ make
     - [ ] 
     - [ ] 
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
-
-Consultez les problèmes ouverts pour la liste complète des fonctionnalités proposées (et des problèmes connus).
-<p align="right">(<a href="#readme-top">retour en haut</a>)</p>
-<!-- Contact -->
-Contact
-
-Votre Nom - @votre_twitter - votre_email@example.com
-
-Lien vers le Projet : https://github.com/votre_nom/nom_du_projet
-<p align="right">(<a href="#readme-top">retour en haut</a>)</p>
-<!-- Liens Markdown et Images -->
-<!-- Assurez-vous que les liens d'images sont valides -->
