@@ -7,32 +7,6 @@
   </a>
 </div>
 
-<!-- Sommaire -->
-<details>
-  <summary>Table des Matières</summary>
-  <ol>
-    <li>
-      <a href="#a-propos-du-projet">À Propos du Projet</a>
-      <ul>
-        <li><a href="#conçu-avec">Conçu Avec</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#pour-commencer">Pour Commencer</a>
-      <ul>
-        <li><a href="#prérequis">Prérequis</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#utilisation">Utilisation</a></li>
-    <li><a href="#feuille-de-route">Feuille de Route</a></li>
-    <li><a href="#contribuer">Contribuer</a></li>
-    <li><a href="#licence">Licence</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#reconnaissances">Reconnaissances</a></li>
-  </ol>
-</details>
-
 ## À Propos du Projet
 
 [![Capture d'écran du Projet][capture-ecran-projet]](https://example.com)
