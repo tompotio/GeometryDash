@@ -3,7 +3,8 @@
 <!-- Titre et Logo -->
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo du Projet" width="80" height="80">
+    <img src="![image](https://github.com/tompotio/GeometryDash/assets/113466055/a16c4228-6656-44c2-915d-f62627c2f6b8)
+" alt="Logo du Projet" width="80" height="80">
   </a>
 
   <h3 align="center">Modèle de README de Qualité</h3>
