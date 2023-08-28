@@ -41,9 +41,9 @@
 
 ### Conçu Avec
 
-* [![C++](https://github.com/tompotio/GeometryDash/assets/113466055/db8d750b-46f9-46e8-8af5-ea9852b1481e)](https://devdocs.io/cpp/)
+* [![C++](https://github.com/tompotio/GeometryDash/assets/113466055/db8d750b-46f9-46e8-8af5-ea9852b1481e =80x80)](https://devdocs.io/cpp/)
   - Langage de Programmation
-* [![CMake](https://example.com/path/to/cmake/icon.png)](https://cmake.org/documentation/)
+* [![CMake](https://github.com/tompotio/GeometryDash/assets/113466055/08e753c1-d530-4f84-8308-36728ac018c0)](https://cmake.org/)
   - Outil de Gestion de Projet
 
 <p align="right">(<a href="#readme-top">retour en haut</a>)</p>
