@@ -9,8 +9,13 @@
 
 class Renderable {
     public:
+        Renderable(double x, double y, int w, int h) : x(x), y(y), w(w), h(h) {}
         void Draw();
         void SetPosition(int x, int y);
+        double GetX(){return x;}
+        double GetY(){return y;}
+        double GetW(){return w;}
+        double GetH(){return h;}
 
     protected:
         bool showShape;

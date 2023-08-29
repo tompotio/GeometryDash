@@ -4,7 +4,7 @@
 
 class Player : public Renderable, public Updatable{
     public:
-        Player();
+        Player(double x, double y, int w, int h);
         void Jump();
         void Update(double deltaT) override;
     

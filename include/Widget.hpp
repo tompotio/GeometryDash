@@ -6,7 +6,7 @@
 
 class Widget : public Renderable, Updatable{
     public:
-        Widget(int x, int y, int width, int height): x(x), y(y), w(width), h(height) {}
+        Widget(int x, int y, int width, int height) : Renderable(x, y, width, height) {}
 
         void SetOnHover(std::function<void()> callback) {
             onHoverCallback = callback;
@@ -19,11 +19,6 @@ class Widget : public Renderable, Updatable{
         void Update(double deltaT) override;
 
     protected:
-        int x; 
-        int y;
-        int w;
-        int h;
-
         std::function<void()> onHoverCallback;
         std::function<void()> onClickCallback;
 };

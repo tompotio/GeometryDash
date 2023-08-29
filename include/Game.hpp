@@ -30,7 +30,7 @@ class Game {
 
         std::vector<Renderable*> renderables;
         std::vector<Updatable*> updatables;
-        Player player;
+        Player* player;
 
         ScreenManager screenManager;
         GraphicsManager& graphicsManager = GraphicsManager::GetInstance();

@@ -3,7 +3,9 @@
 GameMenu::GameMenu(Game* game){
     this->game = game;
 
-    Frame frame1 = Frame(250,250,200,200);
+    //std::cout << frame1.GetX() << ":" << frame1.GetY() << ":" << frame1.GetW() << ":" << frame1.GetH() << std::endl;
+
+    frames.push_back(new Frame(250,250,200,200));
 }
 
 void GameMenu::HandleEvents(){

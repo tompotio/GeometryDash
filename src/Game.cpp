@@ -6,10 +6,9 @@ Game::Game() : isRunning(true), gameMenu(new GameMenu(this)){
 
     gameState = GameState_E::Game_Menu;
 
-    renderables.push_back(&player);
-    player.SetPosition(100,1030);
+    renderables.push_back(new Player(100,1030,50,50));
 
-    updatables.push_back(&player);
+    updatables.push_back(player);
 }
 
 void Game::Run() {
@@ -75,22 +74,22 @@ void Game::HandleEvents(){
 
 void Game::HandleKeyPress(SDL_Keycode key){
     if((key == SDLK_z) || (key == 0)){
-        player.Jump();
+        player->Jump();
     }
 }
 
 void Game::Render(){
+    screenManager.RenderClear();
     SDL_SetRenderDrawColor(screenManager.GetRenderer(), BLANC.r, BLANC.g, BLANC.b, BLANC.a);
     if (gameState == GameState_E::Game_Menu){
         gameMenu->Render();
     }else if(gameState == GameState_E::In_Game){
-        screenManager.RenderClear();
         // Boucle sur les objets du jeu et les render.
         for(Renderable* renderable : renderables){
             renderable->Draw();
         }
-        screenManager.RenderPresent();
     }
+    screenManager.RenderPresent();
 }
 
 void Game::Clean(){

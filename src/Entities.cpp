@@ -2,14 +2,12 @@
 
 // [Player Class method's definition] ---------------------------------------------------------------------------------------------------------------------------------
 
-Player::Player(){
+Player::Player(double x, double y, int w, int h) : Renderable(x,y,w,h) {
     isJumping = false;
     showShape = true;
     showTexture = false;
     shape = Shape_E::CARRE;
     color = MAGENTA;
-    w = 50;
-    h = 50;
     jumpHeight = 130.0f;
     jumpSpeed = 800.0f;
     gravity = 800.0f;
