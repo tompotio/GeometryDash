@@ -1,21 +1,5 @@
 #include "../include/Entities.hpp"
 
-// [Renderable Class method's defintion] ------------------------------------------------------------------------------------------------------------------------------
-
-void Renderable::Draw(){
-    GraphicsManager& graphicsManager = GraphicsManager::GetInstance();
-    if(showTexture){
-
-    }else if(showShape){
-        graphicsManager.RenderShape(shape, x, y,w,h,color);
-    }
-}
-
-void Renderable::SetPosition(int x, int y){
-    this->x = x;
-    this->y = y;
-}
-
 // [Player Class method's definition] ---------------------------------------------------------------------------------------------------------------------------------
 
 Player::Player(){

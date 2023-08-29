@@ -1,9 +1,10 @@
 #include "../include/Game.hpp"
 #include <chrono>
 
-Game::Game(){
-    isRunning = true;
+Game::Game() : isRunning(true), gameMenu(new GameMenu(this)){
     graphicsManager.SetRenderer(screenManager.GetRenderer());
+
+    gameState = GameState_E::Game_Menu;
 
     renderables.push_back(&player);
     player.SetPosition(100,1030);
@@ -26,7 +27,7 @@ void Game::Run() {
 
         if (elapsedTime.count() > 0) {
             fps = 1e9f / static_cast<float>(elapsedTime.count());
-            std::cout << "FPS: " << fps << std::endl;
+            //std::cout << "FPS: " << fps << std::endl;
         }
 
         lastFrameTime = currentTime;
@@ -41,7 +42,11 @@ void Game::Run() {
 
 void Game::HandleEvents(){
     SDL_Event event;
-    while (SDL_PollEvent(&event)) {
+    
+    if (gameState == GameState_E::Game_Menu){
+        gameMenu->HandleEvents();
+    } else if(gameState == GameState_E::In_Game){
+        while (SDL_PollEvent(&event)) {
         switch (event.type)
         {
         case SDL_QUIT:
@@ -65,6 +70,7 @@ void Game::HandleEvents(){
             break;
         }
     }
+    }
 }
 
 void Game::HandleKeyPress(SDL_Keycode key){
@@ -75,12 +81,16 @@ void Game::HandleKeyPress(SDL_Keycode key){
 
 void Game::Render(){
     SDL_SetRenderDrawColor(screenManager.GetRenderer(), BLANC.r, BLANC.g, BLANC.b, BLANC.a);
-    screenManager.RenderClear();
-    // Boucle sur les objets du jeu et les render.
-    for(Renderable* renderable : renderables){
-        renderable->Draw();
+    if (gameState == GameState_E::Game_Menu){
+        gameMenu->Render();
+    }else if(gameState == GameState_E::In_Game){
+        screenManager.RenderClear();
+        // Boucle sur les objets du jeu et les render.
+        for(Renderable* renderable : renderables){
+            renderable->Draw();
+        }
+        screenManager.RenderPresent();
     }
-    screenManager.RenderPresent();
 }
 
 void Game::Clean(){
@@ -89,7 +99,11 @@ void Game::Clean(){
 }
 
 void Game::Update(){
-    for(Updatable* updatable : updatables){
-        updatable->Update(deltaT);
+    if (gameState == GameState_E::Game_Menu){
+        gameMenu->Update(deltaT);
+    }else if(gameState == GameState_E::In_Game){
+        for(Updatable* updatable : updatables){
+            updatable->Update(deltaT);
+        }
     }
 }

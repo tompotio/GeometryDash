@@ -1,5 +1,24 @@
 #include "../include/GraphicsManager.hpp"
 
+// [Renderable Class method's defintion] ------------------------------------------------------------------------------------------------------------------------------
+
+void Renderable::Draw(){
+    GraphicsManager& graphicsManager = GraphicsManager::GetInstance();
+    if(showTexture){
+
+    }else if(showShape){
+        std::cout << "rendering shape" << std::endl;
+        graphicsManager.RenderShape(shape, x, y,w,h,color);
+    }
+}
+
+void Renderable::SetPosition(int x, int y){
+    this->x = x;
+    this->y = y;
+}
+
+// [GraphicsManager Class method's defintion] ------------------------------------------------------------------------------------------------------------------------------
+
 void GraphicsManager::RenderTexture(SDL_Texture* texture, int x, int y){
     int textureWidth, textureHeight;
     SDL_QueryTexture(texture, NULL, NULL, &textureWidth, &textureHeight);
