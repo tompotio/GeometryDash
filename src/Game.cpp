@@ -4,7 +4,7 @@
 Game::Game() : isRunning(true), gameMenu(new GameMenu(this)){
     graphicsManager.SetRenderer(screenManager.GetRenderer());
 
-    gameState = GameState_E::In_Game;
+    gameState = GameState_E::Game_Menu;
 
     player = new Player(100,1030,50,50);
     //player->SetShape(Shape_E::TRIANGLE);

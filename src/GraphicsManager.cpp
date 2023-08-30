@@ -3,12 +3,12 @@
 // [Renderable Class method's defintion] ------------------------------------------------------------------------------------------------------------------------------
 
 void Renderable::Draw(){
-    std::cout << shape << ":" << x << ":" << y << ":" << w << ":" << h << ":" << std::endl;
+    //std::cout << shape << ":" << x << ":" << y << ":" << w << ":" << h << ":" << std::endl;
     GraphicsManager& graphicsManager = GraphicsManager::GetInstance();
     if(showTexture){
 
     }else if(showShape){
-        std::cout << shape << ":" << x << ":" << y << ":" << w << ":" << h << ":" << std::endl;
+        //std::cout << shape << ":" << x << ":" << y << ":" << w << ":" << h << ":" << std::endl;
         graphicsManager.RenderShape(shape, x,y,w,h,color);
     }
 }

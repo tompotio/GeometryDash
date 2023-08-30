@@ -8,6 +8,7 @@ const SDL_Color TRANSPARENT = { 0, 0, 0, 0 };
 const SDL_Color JAUNE = { 255, 255, 0, 255 };
 const SDL_Color CYAN = { 0, 255, 255, 255 };
 const SDL_Color MAGENTA = { 255, 0, 255, 255 };
+const SDL_Color MAGENTAHOVER = { 230, 0, 230, 230 };
 const SDL_Color DIMGRAY = {105,105,105,105};
 const SDL_Color GRIS = { 128, 128, 128, 255 };
 const SDL_Color ARGENT = { 192, 192, 192, 255 };

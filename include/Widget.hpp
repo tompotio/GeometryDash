@@ -19,6 +19,12 @@ class Widget : public Renderable, Updatable{
             onClickCallback = callback;
         }
 
+        void SetHovered(bool val){hovered = val;}
+
+        bool GetHovered(){return hovered;}
+
+        void Reset(){SetColor(MAGENTA);}
+
         void OnHover() {
             if (onHoverCallback) {
                 onHoverCallback();
@@ -34,8 +40,29 @@ class Widget : public Renderable, Updatable{
         void Update(double deltaT) override;
 
     protected:
+        bool hovered;
+
         std::function<void()> onHoverCallback;
         std::function<void()> onClickCallback;
+};
+
+class Button : public Widget {
+    public:
+        Button(int x, int y, int width, int height) : Widget(x,y,width,height) {
+            this->onHoverCallback = [this](){
+                this->SetColor(this->GetHoverColor());
+            };
+        }
+
+        void SetHoverColor(SDL_Color hc){hoverColor = hc;}
+        void SetColor(SDL_Color c){color = c;showColor = c;}
+        SDL_Color GetHoverColor(){return hoverColor;}
+        SDL_Color GetShowColor(){return showColor;}
+
+    private:
+        SDL_Color showColor = MAGENTA;
+        SDL_Color hoverColor = MAGENTA;
+        
 };
 
 class Frame : public Widget{

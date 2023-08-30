@@ -27,6 +27,14 @@ GameMenu::GameMenu(Game* game){
     play_but->SetShape(Shape_E::RECTANGLE);
     play_but->SetColor(MAGENTA);
 
+    play_but->SetOnHover([play_but](){
+        play_but->SetColor(MAGENTAHOVER);
+    });
+
+    play_but->SetOnClick([play_but,game](){
+        game->SetGameState(GameState_E::In_Game);
+    });
+
     frame1->AddWidget(play_but);
 
     frames.push_back(frame1);
