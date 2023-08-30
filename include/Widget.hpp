@@ -6,7 +6,10 @@
 
 class Widget : public Renderable, Updatable{
     public:
-        Widget(int x, int y, int width, int height) : Renderable(x, y, width, height) {}
+        Widget(int x, int y, int width, int height) : Renderable(x, y, width, height) {
+            showShape = true;
+            showTexture = false;
+        }
 
         void SetOnHover(std::function<void()> callback) {
             onHoverCallback = callback;
@@ -14,6 +17,18 @@ class Widget : public Renderable, Updatable{
 
         void SetOnClick(std::function<void()> callback) {
             onClickCallback = callback;
+        }
+
+        void OnHover() {
+            if (onHoverCallback) {
+                onHoverCallback();
+            }
+        }
+
+        void OnClick() {
+            if (onClickCallback) {
+                onClickCallback();
+            }
         }
 
         void Update(double deltaT) override;
@@ -28,8 +43,9 @@ class Frame : public Widget{
         Frame(int x, int y, int width, int height);
 
         void DrawW();
-        void addWidget(Widget& widgets...);
+        void AddWidget(Widget* widget);
         void Update(double deltaT) override;
+        void Update(double deltaT, bool clicking);
 
     private:
         std::vector<Widget*> widgets;

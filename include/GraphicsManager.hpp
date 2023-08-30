@@ -11,19 +11,25 @@ class Renderable {
     public:
         Renderable(double x, double y, int w, int h) : x(x), y(y), w(w), h(h) {}
         void Draw();
+
         void SetPosition(int x, int y);
+        void SetShape(Shape_E shape){this->shape = shape;}
+        void SetColor(SDL_Color c){color = c;};
+        void SetShowShape(bool val){showShape = val;}
+        void SetShowTexture(bool val){showTexture = val;}
+
         double GetX(){return x;}
         double GetY(){return y;}
         double GetW(){return w;}
         double GetH(){return h;}
+        Shape_E GetShape(){return shape;}
 
     protected:
         bool showShape;
         bool showTexture;
 
-        int w; 
-        int h;
-
+        double w; 
+        double h;
         double x;
         double y;
 

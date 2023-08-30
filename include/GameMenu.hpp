@@ -25,6 +25,8 @@ class GameMenu {
     private:
         std::vector<Frame*> frames;
 
+        bool clicking;
+
         Game* game;
 
         void HandleKeyPress(SDL_Keycode key);

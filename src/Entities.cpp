@@ -6,7 +6,7 @@ Player::Player(double x, double y, int w, int h) : Renderable(x,y,w,h) {
     isJumping = false;
     showShape = true;
     showTexture = false;
-    shape = Shape_E::CARRE;
+    shape = Shape_E::RECTANGLE;
     color = MAGENTA;
     jumpHeight = 130.0f;
     jumpSpeed = 800.0f;

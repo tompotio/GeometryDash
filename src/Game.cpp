@@ -4,9 +4,12 @@
 Game::Game() : isRunning(true), gameMenu(new GameMenu(this)){
     graphicsManager.SetRenderer(screenManager.GetRenderer());
 
-    gameState = GameState_E::Game_Menu;
+    gameState = GameState_E::In_Game;
 
-    renderables.push_back(new Player(100,1030,50,50));
+    player = new Player(100,1030,50,50);
+    //player->SetShape(Shape_E::TRIANGLE);
+
+    renderables.push_back(player);
 
     updatables.push_back(player);
 }
@@ -41,34 +44,33 @@ void Game::Run() {
 
 void Game::HandleEvents(){
     SDL_Event event;
-    
     if (gameState == GameState_E::Game_Menu){
         gameMenu->HandleEvents();
     } else if(gameState == GameState_E::In_Game){
         while (SDL_PollEvent(&event)) {
-        switch (event.type)
-        {
-        case SDL_QUIT:
-            isRunning = false;
-            break;
-        // Partie clavier
-        case SDL_KEYDOWN:
-            // Le joueur saute.
-            if(event.key.keysym.sym == SDLK_z){
-                HandleKeyPress(SDLK_z);
+            switch (event.type)
+            {
+            case SDL_QUIT:
+                isRunning = false;
+                break;
+            // Partie clavier
+            case SDL_KEYDOWN:
+                // Le joueur saute.
+                if(event.key.keysym.sym == SDLK_z){
+                    HandleKeyPress(SDLK_z);
+                }
+                break;
+            
+            // Partie event manette 
+            case SDL_JOYBUTTONDOWN:
+                if (event.jbutton.button == 0) {
+                    HandleKeyPress(0);
+                }
+                break;
+            default:
+                break;
             }
-            break;
-        
-        // Partie event manette 
-        case SDL_JOYBUTTONDOWN:
-            if (event.jbutton.button == 0) {
-                HandleKeyPress(0);
-            }
-            break;
-        default:
-            break;
         }
-    }
     }
 }
 
@@ -79,8 +81,9 @@ void Game::HandleKeyPress(SDL_Keycode key){
 }
 
 void Game::Render(){
+    SDL_SetRenderDrawColor(screenManager.GetRenderer(), GRIS.r, GRIS.g, GRIS.b, GRIS.a);
+
     screenManager.RenderClear();
-    SDL_SetRenderDrawColor(screenManager.GetRenderer(), BLANC.r, BLANC.g, BLANC.b, BLANC.a);
     if (gameState == GameState_E::Game_Menu){
         gameMenu->Render();
     }else if(gameState == GameState_E::In_Game){

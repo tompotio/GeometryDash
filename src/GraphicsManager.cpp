@@ -33,7 +33,7 @@ void GraphicsManager::RenderTexture(SDL_Texture* texture, int x, int y, int w, i
 }
 
 void GraphicsManager::RenderShape(Shape_E shape, int x, int y, int w, int h, const SDL_Color color){
-    if (shape == Shape_E::CARRE){
+    if (shape == Shape_E::RECTANGLE){
         SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
         SDL_Rect rect = {x, y, w, h};
         SDL_RenderFillRect(renderer, &rect);

@@ -2,10 +2,35 @@
 
 GameMenu::GameMenu(Game* game){
     this->game = game;
+    clicking = false;
 
     //std::cout << frame1.GetX() << ":" << frame1.GetY() << ":" << frame1.GetW() << ":" << frame1.GetH() << std::endl;
+    int frame1Width = 1000;
 
-    frames.push_back(new Frame(250,250,200,200));
+    Frame* frame1 = new Frame(
+        (int)(960 - (frame1Width/2)),
+        250,
+        frame1Width,
+        570
+    );
+
+    frame1->SetShape(Shape_E::RECTANGLE);
+    frame1->SetColor(DIMGRAY);
+
+    Widget* play_but = new Widget(
+        500,
+        500,
+        250,
+        50
+    );
+
+    play_but->SetShape(Shape_E::RECTANGLE);
+    play_but->SetColor(MAGENTA);
+
+    frame1->AddWidget(play_but);
+
+    frames.push_back(frame1);
+
 }
 
 void GameMenu::HandleEvents(){
@@ -16,6 +41,15 @@ void GameMenu::HandleEvents(){
         case SDL_QUIT:
             game->SetIsRunning(false);
             break;
+
+        case SDL_MOUSEBUTTONDOWN:
+            clicking = true;
+            break;
+
+        case SDL_MOUSEBUTTONUP:
+            clicking = false;
+            break;
+
         // Partie clavier
         case SDL_KEYDOWN:
             // Le joueur saute.
@@ -50,5 +84,7 @@ void GameMenu::Render(){
 }
 
 void GameMenu::Update(double deltaT){
-    
+    for(Frame* frame : frames){
+        frame->Update(deltaT,clicking);
+    }
 }
