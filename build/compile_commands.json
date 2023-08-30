@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/tompotio/Desktop/GeometryDash/build",
+  "command": "/usr/bin/g++  -I/usr/include/SDL2  -g -g -o CMakeFiles/GeometryDash.dir/app/Main.cpp.o -c /home/tompotio/Desktop/GeometryDash/app/Main.cpp",
+  "file": "/home/tompotio/Desktop/GeometryDash/app/Main.cpp"
+},
+{
+  "directory": "/home/tompotio/Desktop/GeometryDash/build",
+  "command": "/usr/bin/g++  -I/usr/include/SDL2  -g -g -o CMakeFiles/GeometryDash.dir/src/Game.cpp.o -c /home/tompotio/Desktop/GeometryDash/src/Game.cpp",
+  "file": "/home/tompotio/Desktop/GeometryDash/src/Game.cpp"
+},
+{
+  "directory": "/home/tompotio/Desktop/GeometryDash/build",
+  "command": "/usr/bin/g++  -I/usr/include/SDL2  -g -g -o CMakeFiles/GeometryDash.dir/src/ScreenManager.cpp.o -c /home/tompotio/Desktop/GeometryDash/src/ScreenManager.cpp",
+  "file": "/home/tompotio/Desktop/GeometryDash/src/ScreenManager.cpp"
+},
+{
+  "directory": "/home/tompotio/Desktop/GeometryDash/build",
+  "command": "/usr/bin/g++  -I/usr/include/SDL2  -g -g -o CMakeFiles/GeometryDash.dir/src/Entities.cpp.o -c /home/tompotio/Desktop/GeometryDash/src/Entities.cpp",
+  "file": "/home/tompotio/Desktop/GeometryDash/src/Entities.cpp"
+},
+{
+  "directory": "/home/tompotio/Desktop/GeometryDash/build",
+  "command": "/usr/bin/g++  -I/usr/include/SDL2  -g -g -o CMakeFiles/GeometryDash.dir/src/GraphicsManager.cpp.o -c /home/tompotio/Desktop/GeometryDash/src/GraphicsManager.cpp",
+  "file": "/home/tompotio/Desktop/GeometryDash/src/GraphicsManager.cpp"
+},
+{
+  "directory": "/home/tompotio/Desktop/GeometryDash/build",
+  "command": "/usr/bin/g++  -I/usr/include/SDL2  -g -g -o CMakeFiles/GeometryDash.dir/src/Widget.cpp.o -c /home/tompotio/Desktop/GeometryDash/src/Widget.cpp",
+  "file": "/home/tompotio/Desktop/GeometryDash/src/Widget.cpp"
+},
+{
+  "directory": "/home/tompotio/Desktop/GeometryDash/build",
+  "command": "/usr/bin/g++  -I/usr/include/SDL2  -g -g -o CMakeFiles/GeometryDash.dir/src/GameMenu.cpp.o -c /home/tompotio/Desktop/GeometryDash/src/GameMenu.cpp",
+  "file": "/home/tompotio/Desktop/GeometryDash/src/GameMenu.cpp"
+}
+]
