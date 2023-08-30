@@ -1,3 +1,0 @@
-/home/tompotio/Desktop/GeometryDash/build/CMakeFiles/GeometryDash.dir
-/home/tompotio/Desktop/GeometryDash/build/CMakeFiles/edit_cache.dir
-/home/tompotio/Desktop/GeometryDash/build/CMakeFiles/rebuild_cache.dir
