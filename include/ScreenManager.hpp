@@ -4,6 +4,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
 
 // Classe qui s'occupe de gérer l'écran du jeu.
 class ScreenManager{
@@ -31,5 +32,5 @@ class ScreenManager{
 
     private:
         SDL_Renderer* renderer;
-        SDL_Window *window;
+        SDL_Window* window;
 };

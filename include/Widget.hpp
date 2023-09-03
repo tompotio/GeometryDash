@@ -97,35 +97,46 @@ class Widget : public Renderable, Updatable{
 
 class TextLabel : public Widget {
     public: 
-        TextLabel(int x, int y, int width, int height) : Widget(x,y,width,height) {}
-
-        void SetText(String text){
-            this->text = text;
+        TextLabel(int x, int y, int width, int height) : Widget(x,y,width,height), fontSize(15), textColor(BLANC){
+            SetFont(Font_E::StarBorn);
         }
+
+        void SetText(String text){this->text = text;}
+
+        void SetFontSize(int val){fontSize = val;}
+
+        void SetFont(Font_E fontType);
+
+        int GetFontSiez(){return fontSize;}
+
+        void Draw() override;
 
         String GetText(){return text;}
 
     private:
         String text;
+        Color textColor;
+        Font font;
+        int fontSize;
 };
 
-class Button : public Widget {
+class Button : public TextLabel {
     public:
-        Button(int x, int y, int width, int height) : Widget(x,y,width,height), showColor(MAGENTA), hoverColor(MAGENTAHOVER) {
+        Button(int x, int y, int width, int height) : TextLabel(x,y,width,height), showColor(MAGENTA), hoverColor(MAGENTAHOVER) {
             this->SetColor(showColor);
             this->SetHoverColor(MAGENTAHOVER);
         }
 
         void SetHovered(bool val) override;
 
-        void SetHoverColor(SDL_Color hc){
+        void SetHoverColor(Color hc){
             hoverColor = hc;
             this->onHoverCallback = [this,hc](){
                 this->color = hc;
             };
         }
 
-        void SetColor(SDL_Color c){
+        void SetColor(Color c){
             showColor = c;
             color = showColor;
         }
@@ -137,12 +148,13 @@ class Button : public Widget {
             return false;
         }
 
-        SDL_Color GetHoverColor(){return hoverColor;}
-        SDL_Color GetShowColor(){return showColor;}
+        Color GetHoverColor(){return hoverColor;}
+        Color GetShowColor(){return showColor;}
 
     private:
-        SDL_Color showColor;
-        SDL_Color hoverColor; 
+        Color showColor;
+        Color hoverColor;
+        Color texthoverColor;
 };
 
 class CheckBox : public Widget {

@@ -3,6 +3,7 @@
 
 Game::Game() : isRunning(true), gameMenu(new GameMenu(this)){
     graphicsManager.SetRenderer(screenManager.GetRenderer());
+    graphicsManager.SetWindow(screenManager.GetWindow());
 
     gameState = GameState_E::Game_Menu;
 

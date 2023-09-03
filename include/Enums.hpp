@@ -21,4 +21,9 @@ enum Shape_E {
     TRIANGLE,
 };
 
+enum Font_E {
+    StarBorn,
+    SuperMario,
+};
+
 using String = std::string;

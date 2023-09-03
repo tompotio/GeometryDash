@@ -30,5 +30,7 @@ ScreenManager::ScreenManager() {
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     }
 
+    TTF_Init();
+
     SDL_SetWindowTitle(window, title);
 }

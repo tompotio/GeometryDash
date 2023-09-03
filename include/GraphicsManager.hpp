@@ -2,17 +2,22 @@
 
 #include <SDL2/SDL.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <map>
 #include <string>
 #include <iostream>
 #include "Enums.hpp"
 
 using Texture = SDL_Texture*;
+using Color = SDL_Color;
+using Font = TTF_Font*;
+using Renderer = SDL_Renderer*;
+using Window = SDL_Window*;
 
 class Renderable {
     public:
         Renderable(double x, double y, int w, int h) : x(x), y(y), w(w), h(h) {}
-        void Draw();
+        virtual void Draw();
 
         void SetPosition(int x, int y);
         void SetShape(Shape_E shape){this->shape = shape;}
@@ -35,7 +40,7 @@ class Renderable {
         double x;
         double y;
 
-        std::string texture_id;
+        String texture_id;
         Shape_E shape;
         SDL_Color color;
 };
@@ -67,9 +72,15 @@ class GraphicsManager {
          */
         void CleanUp();
 
-        void SetRenderer(SDL_Renderer* renderer){
+        void SetRenderer(Renderer renderer){
             this->renderer = renderer;
         }
+
+        void SetWindow(Window win){window = win;}
+
+        Renderer GetRenderer(){return renderer;}
+
+        Window GetWindow(){return window;}
 
         static GraphicsManager& GetInstance() {
             static GraphicsManager instance; // Crée une unique instance
@@ -77,7 +88,8 @@ class GraphicsManager {
         }
 
     private:
-        SDL_Renderer* renderer;
+        Renderer renderer;
+        Window window;
 
         std::map<std::string,SDL_Texture*> textures;
 };

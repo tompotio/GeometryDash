@@ -19,6 +19,8 @@ GameMenu::GameMenu(Game* game){
         game->SetGameState(GameState_E::In_Game);
     });
 
+    play_but->SetText("PLAY !");
+
     frame1->AddWidget(play_but);
     frame1->SetCentered(true);
     frames.push_back(frame1);
