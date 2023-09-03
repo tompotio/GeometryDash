@@ -20,3 +20,5 @@ enum Shape_E {
     RECTANGLE,
     TRIANGLE,
 };
+
+using String = std::string;

@@ -4,41 +4,24 @@ GameMenu::GameMenu(Game* game){
     this->game = game;
     clicking = false;
 
-    //std::cout << frame1.GetX() << ":" << frame1.GetY() << ":" << frame1.GetW() << ":" << frame1.GetH() << std::endl;
     int frame1Width = 1000;
 
-    Frame* frame1 = new Frame(
-        (int)(960 - (frame1Width/2)),
-        250,
-        frame1Width,
-        570
-    );
+    Frame* frame1 = new Frame((int)(960 - (frame1Width/2)),250,frame1Width,570);
 
     frame1->SetShape(Shape_E::RECTANGLE);
     frame1->SetColor(DIMGRAY);
 
-    Widget* play_but = new Widget(
-        500,
-        500,
-        250,
-        50
-    );
+    Button* play_but = new Button(500,500,250,50);
 
     play_but->SetShape(Shape_E::RECTANGLE);
-    play_but->SetColor(MAGENTA);
-
-    play_but->SetOnHover([play_but](){
-        play_but->SetColor(MAGENTAHOVER);
-    });
 
     play_but->SetOnClick([play_but,game](){
         game->SetGameState(GameState_E::In_Game);
     });
 
     frame1->AddWidget(play_but);
-
+    frame1->SetCentered(true);
     frames.push_back(frame1);
-
 }
 
 void GameMenu::HandleEvents(){
@@ -80,14 +63,13 @@ void GameMenu::HandleEvents(){
 
 void GameMenu::HandleKeyPress(SDL_Keycode key){
     if((key == SDLK_z) || (key == 0)){
-
+        
     }
 }
 
 void GameMenu::Render(){
     for(Frame* frame : frames){
         frame->Draw();
-        frame->DrawW();
     }
 }
 

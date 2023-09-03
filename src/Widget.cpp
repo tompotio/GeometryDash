@@ -6,9 +6,16 @@ void Widget::Update(double deltaT) {
     
 }
 
+void Button::SetHovered(bool val){
+    Widget::SetHovered(val);
+    if (!val){
+        this->SetColor(showColor);
+    }
+}
+
 // [Frame Class method's definition] ---------------------------------------------------------------------------------------------------------------------------------
 
-Frame::Frame(int x, int y, int width, int height) : Widget(x, y, width, height){
+Frame::Frame(int x, int y, int width, int height) : Widget(x, y, width, height), centered(false), centeredWidgets(false){
     showShape = true;
     showTexture = false;
     hovered = false;
@@ -16,11 +23,28 @@ Frame::Frame(int x, int y, int width, int height) : Widget(x, y, width, height){
 
 void Frame::AddWidget(Widget* widget){
     widgets.push_back(widget);
+
 }
 
-void Frame::DrawW(){
+void Frame::Draw(){
+    Renderable::Draw();
     for(Widget* widget : widgets){
         widget->Draw();
+    }
+}
+
+bool CompareWidgets(const Widget* widget1, const Widget* widget2) {
+    return widget1->GetLayoutOrder() <= widget2->GetLayoutOrder();
+}
+
+void Frame::SetCentered(bool val){
+    centered = val;
+
+    std::sort(widgets.begin(), widgets.end(), CompareWidgets);
+    for (Widget* widget : widgets) {
+        int x = (this->GetW() - widget->GetW()) / 2;
+        int y = (this->GetH() - widget->GetH()) / 2;
+        widget->SetPosition(x, y);
     }
 }
 
@@ -49,8 +73,12 @@ void Frame::Update(double deltaT, bool clicking) {
                 }
             }
             if(!collide && widget->GetHovered()){
-                widget->SetHovered(false);
-                widget->Reset();
+                if(widget->IsA(Widget_E::button)){
+                    Button* button = dynamic_cast<Button*>(widget);
+                    button->SetHovered(false);
+                }else{
+                    widget->SetHovered(false);
+                }
             }
         }
     }

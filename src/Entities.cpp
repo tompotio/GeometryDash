@@ -31,7 +31,7 @@ void Player::Update(double deltaT) {
             return;
         }
         y -= height;
-    } else {
+    } else { // Memo : Appliquer la rotation du joueur ici 
         if (y < 1030){
             y += gravity * deltaT;
         }else if(y >= 1030){

@@ -7,6 +7,8 @@
 #include <iostream>
 #include "Enums.hpp"
 
+using Texture = SDL_Texture*;
+
 class Renderable {
     public:
         Renderable(double x, double y, int w, int h) : x(x), y(y), w(w), h(h) {}
