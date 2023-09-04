@@ -98,7 +98,7 @@ class Widget : public Renderable, Updatable{
 class TextLabel : public Widget {
     public: 
         TextLabel(int x, int y, int width, int height) : Widget(x,y,width,height), fontSize(15), textColor(BLANC){
-            SetFont(Font_E::StarBorn);
+            SetFont(Font_E::SuperMario);
         }
 
         void SetText(String text){this->text = text;}
@@ -113,7 +113,7 @@ class TextLabel : public Widget {
 
         String GetText(){return text;}
 
-    private:
+    protected:
         String text;
         Color textColor;
         Font font;
@@ -122,7 +122,7 @@ class TextLabel : public Widget {
 
 class Button : public TextLabel {
     public:
-        Button(int x, int y, int width, int height) : TextLabel(x,y,width,height), showColor(MAGENTA), hoverColor(MAGENTAHOVER) {
+        Button(int x, int y, int width, int height) : TextLabel(x,y,width,height), showColor(MAGENTA), hoverColor(MAGENTAHOVER), centerText(true) {
             this->SetColor(showColor);
             this->SetHoverColor(MAGENTAHOVER);
         }
@@ -148,6 +148,10 @@ class Button : public TextLabel {
             return false;
         }
 
+        void Draw() override;
+
+        void CenterText(bool val){centerText = val;}
+
         Color GetHoverColor(){return hoverColor;}
         Color GetShowColor(){return showColor;}
 
@@ -155,6 +159,7 @@ class Button : public TextLabel {
         Color showColor;
         Color hoverColor;
         Color texthoverColor;
+        bool centerText;
 };
 
 class CheckBox : public Widget {

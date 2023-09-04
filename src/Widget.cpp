@@ -29,28 +29,38 @@ void TextLabel::Draw(){
     Renderable::Draw();
 
     SDL_Surface* textSurface = TTF_RenderText_Solid(font, text.c_str(), textColor);
-
     if (textSurface == nullptr) {
         std::cout << "Erreur durant la création de la surface : " << TTF_GetError() << std::endl;
     }
 
-    SDL_Rect destRect;
-    destRect.x = x;
-    destRect.y = y;
-    destRect.w = textSurface->w;
-    destRect.h = textSurface->h;
+    SDL_Rect destRect = {(int)x,(int)y,textSurface->w,textSurface->h};   
 
-    SDL_Surface* winSurface = SDL_GetWindowSurface(GraphicsManager::GetInstance().GetWindow());
-    if (winSurface == nullptr) {
-        std::cout << "Erreur dans Draw de TextLabel avec le window : " << SDL_GetError() << std::endl;
-    }
-
-    SDL_Texture* texture = SDL_CreateTextureFromSurface(GraphicsManager::GetInstance().GetRenderer(), winSurface);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(GraphicsManager::GetInstance().GetRenderer(), textSurface);
 
     if (SDL_RenderCopy(GraphicsManager::GetInstance().GetRenderer(), texture, NULL, &destRect) != 0){
         std::cout << "Le texte n'a pas pu être affiché : " << SDL_GetError() << std::endl;
-    } 
+    }
+    
+    SDL_FreeSurface(textSurface);
+    SDL_DestroyTexture(texture);
+}
 
+void Button::Draw(){
+    Renderable::Draw();
+
+    SDL_Surface* textSurface = TTF_RenderText_Solid(font, text.c_str(), textColor);
+    if (textSurface == nullptr) {
+        std::cout << "Erreur durant la création de la surface : " << TTF_GetError() << std::endl;
+    }
+
+    SDL_Rect destRect = {(int)(x + (((w - textSurface->w)/2) * centerText)),(int)(y+ (((h - textSurface->h)/2) * centerText)),textSurface->w,textSurface->h};   
+
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(GraphicsManager::GetInstance().GetRenderer(), textSurface);
+
+    if (SDL_RenderCopy(GraphicsManager::GetInstance().GetRenderer(), texture, NULL, &destRect) != 0){
+        std::cout << "Le texte n'a pas pu être affiché : " << SDL_GetError() << std::endl;
+    }
+    
     SDL_FreeSurface(textSurface);
     SDL_DestroyTexture(texture);
 }
